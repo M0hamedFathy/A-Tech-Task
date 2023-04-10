@@ -1,0 +1,27 @@
+<div class="deals">
+  <div class="m-2">
+    <div
+      class="custom-card d-flex flex-column p-2"
+      [ngClass]="{ selected: selected }"
+    >
+      <div class="custom-card_title d-flex justify-content-between mb-2">
+        <span>{{ deal.company }}</span> <span>...</span>
+      </div>
+      <div class="custom-card_labels mb-2">
+        <span class="custom-card_labels_returing me-2">{{ deal.state }}</span>
+        <span class="custom-card_labels_percentage">{{
+          deal.probability_status
+        }}</span>
+      </div>
+      <div class="custom-card_contact-details d-flex align-items-center mb-2">
+        <img class="me-1" src="assets/phone.png" alt="" />
+        <span class="me-3">{{ deal.first_name + " " + deal.last_name }}</span>
+        <span>{{ deal.phone }}</span>
+      </div>
+      <div class="custom-card_date d-flex align-items-center mb-2">
+        <img class="me-1" src="assets/date.png" alt="" />
+        <span>{{ deal.date }}</span>
+      </div>
+    </div>
+  </div>
+</div>

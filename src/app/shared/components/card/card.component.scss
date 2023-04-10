@@ -1,0 +1,56 @@
+@import "/src/assets/colors/variables";
+
+.custom-card {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .custom-card_title {
+    span {
+      color: $darker-color;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &:last-child {
+      color: $grey-color;
+    }
+  }
+  .custom-card_labels {
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      padding: 3px 6px;
+      border-radius: 5px;
+      color: #fff;
+    }
+    .custom-card_labels_returing {
+      color: #fff;
+      background-color: $grey-color;
+    }
+    .custom-card_labels_percentage {
+      background-color: $blue-color;
+    }
+  }
+  .custom-card_contact-details {
+    img {
+      height: 25px;
+    }
+    span {
+      color: $grey-color;
+      font-weight: bold;
+    }
+  }
+  .custom-card_date {
+    img {
+      height: 25px;
+    }
+    span {
+      color: $grey-color;
+      font-weight: bold;
+    }
+  }
+}
+
+.selected {
+  border: 3px dashed rgba(24, 224, 24, 0.637);
+}
