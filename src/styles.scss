@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  padding: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  opacity: 0.9;
+  max-width: 200px;
+  text-align: center;
+}
+
+.tooltip.show {
+  display: block;
+}
