@@ -1,0 +1,26 @@
+<div id="btn-settings-dropdown" (click)="isExpanded = !isExpanded">
+  <button
+    class="status"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    [ngClass]="{ 'custom-height': customHeight, 'custom-border': customBorder }"
+  >
+    <img class="user" src="assets/common/user.svg" alt="" />
+    <img
+      #settingsArrow
+      src="assets/common/blue-arrow-{{ isExpanded ? 'up' : 'down' }}wards.svg"
+      alt="status dropdown"
+    />
+  </button>
+
+  <div class="dropdown-menu settings-dropdown p-0">
+    <div
+      *ngFor="let s of settings"
+      class="settings"
+      (click)="onSettingsSelected(s)"
+      [ngClass]="{ 'text-danger': s.id == 'logout' }"
+    >
+      {{ s.display }}
+    </div>
+  </div>
+</div>
