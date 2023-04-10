@@ -20,8 +20,6 @@ At the user drop down you can see logout, my team etc in case the back-end suppo
 
 Below that you can find the filters which is native reusable component and the search input field. the search input field is fuzzy. You can search using the company name.
 
-> Note: Only defined user can log in.
-
 The main component which is the deals lists component. It does include 5 lists.
 
 - **Potential Value.**
