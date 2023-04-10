@@ -1,0 +1,27 @@
+<div class="position-relative">
+  <div
+    class="filter d-flex align-items-center justify-content-between px-3 position-relative"
+    (click)="isExpanded = !isExpanded"
+  >
+    <div class="filter-details">
+      <span class="filter-name">{{ filterName || "test" }}: </span>
+      <span class="selected-option">{{ selectedOption }}</span>
+    </div>
+    <img
+      src="assets/common/blue-arrow-{{ isExpanded ? 'down' : 'up' }}wards.svg"
+      alt="icon"
+    />
+  </div>
+  <div class="filter-options position-absolute" *ngIf="isExpanded">
+    <ng-container *ngIf="options.length > 0">
+      <div class="option" *ngFor="let option of options">
+        <ul>
+          <li class="d-flex align-items-center">
+            <input type="checkbox" class="me-1" [id]="option.id" />
+            <label [for]="option.id">{{ option.display }}</label>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+</div>
