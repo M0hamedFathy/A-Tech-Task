@@ -1,0 +1,100 @@
+<div
+  class="header d-flex justify-content-between align-items-center container-fluid"
+>
+  <div class="header__left-side d-flex">
+    <div class="header__left-side__logo me-3">
+      <img src="assets/logo.png" alt="" />
+    </div>
+    <div class="header__left-side_title d-flex align-items-center">
+      <p class="header__left-side_title_text m-0">Nor-Shipping 2019</p>
+      <div class="header__left-side_title__icon d-flex flex-column ms-2">
+        <img src="assets/common/blue-arrow-upwards.svg" alt="" />
+        <img src="assets/common/blue-arrow-downwards.svg" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="header__right-side d-flex">
+    <div class="header__right-side_status d-flex align-items-center">
+      <div class="header__right-side_status_card d-flex">
+        <div class="status me-3 red">
+          <p class="header__right-side_status_card_title ms-1">DEALS</p>
+          <p class="header__right-side_status_card_value ms-1">{{dealsNumber}}</p>
+        </div>
+        <div class="status me-3 purple">
+          <p class="header__right-side_status_card_title ms-1">
+            TOTAL VALUE [NOK]
+          </p>
+          <p class="header__right-side_status_card_value ms-1">4.19 mln</p>
+        </div>
+        <div class="status me-3 blue">
+          <p class="header__right-side_status_card_title ms-1">HIT RATE</p>
+          <p class="header__right-side_status_card_value ms-1">10%</p>
+        </div>
+        <div class="status me-3 green">
+          <p class="header__right-side_status_card_title ms-1">DEALS WON</p>
+          <p class="header__right-side_status_card_value ms-1">12/65</p>
+        </div>
+        <div class="status me-3 orange">
+          <p class="header__right-side_status_card_title ms-1">NEW CLIENTS</p>
+          <p class="header__right-side_status_card_value ms-1">8/12</p>
+        </div>
+      </div>
+    </div>
+    <div class="header__right-side-dropdown">
+      <div class="btn-group">
+        <app-btn-settings-dropdown
+          [customHeight]="true"
+          [settings]="settings"
+          class="ms-2"
+          (onSelect)="onSettingSelected($event)"
+        ></app-btn-settings-dropdown>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Start tabs -->
+<div class="mt-3 mb-3">
+  <div class="nav-menu sticky-top">
+    <ul>
+      <li class="sections-menu__items">
+        <div class="d-flex align-items-center">
+          <img src="assets/exhib.png" alt="" />
+          <span> Exhibitors </span>
+        </div>
+      </li>
+      <li class="sections-menu__items active">
+        <div class="d-flex align-items-center">
+          <img src="assets/sales.png" alt="" />
+          <span> Sales </span>
+        </div>
+      </li>
+      <li class="sections-menu__items">
+        <div class="d-flex align-items-center">
+          <img src="assets/program.png" alt="" />
+          <span> Program </span>
+        </div>
+      </li>
+      <li class="sections-menu__items">
+        <div class="d-flex align-items-center">
+          <img src="assets/delegates.png" alt="" />
+          <span> Delegates </span>
+        </div>
+      </li>
+      <li class="sections-menu__items">
+        <div class="d-flex align-items-center">
+          <img src="assets/settings.png" alt="" />
+          <span> Settings </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="details pt-3 pb-3">
+  <div class="details__container">
+    <span class="active me-3">Deals</span>
+    <span class="me-3">Activities</span>
+    <span>Statistics</span>
+  </div>
+</div>
+<!-- End tabs -->
