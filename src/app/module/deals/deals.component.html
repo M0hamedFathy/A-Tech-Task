@@ -1,0 +1,241 @@
+<div class="deals" *ngIf="deals">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h4 class="title">Deals</h4>
+    <div class="filters d-flex">
+      <app-filter
+        [options]="segmentArray"
+        class="me-2"
+        filterName="Segment"
+      ></app-filter>
+      <app-filter class="me-2" filterName="Assignee"></app-filter>
+      <app-filter class="me-2" filterName="Status"></app-filter>
+      <input
+        type="search"
+        placeholder="Search by name or flag"
+        class="form-control me-5"
+        (input)="onSearch($event)"
+      />
+      <div>
+        <button class="add-btn"><span class="icon">+</span> ADD DEAL</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-container">
+    <div class="row" cdkDropListGroup>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2">
+        <div class="card-container w-100">
+          <div class="header">
+            <p>Potential Value</p>
+            <div class="d-flex">
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/tasks.png" alt="" />
+                <span>{{ potentialValueArray.length }}</span>
+              </div>
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/value.png" alt="" />
+                <span>2.38 mln</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src=" assets/alarm.png" alt="" />
+                <span>2</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="potentialValueArray"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of potentialValueArray; index as i"
+              cdkDrag
+            >
+              <app-card
+                class="w-100"
+                [deal]="item"
+                (click)="onSelect(i, potentialValueArray)"
+                [selected]="item.selected ? true : false"
+              ></app-card>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2">
+        <div class="card-container w-100">
+          <div class="header">
+            <p>Focus</p>
+            <div class="d-flex">
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/tasks.png" alt="" />
+                <span>{{ focusArray.length }}</span>
+              </div>
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/value.png" alt="" />
+                <span>2.38 mln</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src=" assets/alarm.png" alt="" />
+                <span>2</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="focusArray"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of focusArray; index as i"
+              cdkDrag
+            >
+              <app-card
+                class="w-100"
+                [deal]="item"
+                (click)="onSelect(i, focusArray)"
+                [selected]="item.selected ? true : false"
+              ></app-card>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2">
+        <div class="card-container w-100">
+          <div class="header">
+            <p>Contact Made</p>
+            <div class="d-flex">
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/tasks.png" alt="" />
+                <span>{{ contactMadeArray.length }}</span>
+              </div>
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/value.png" alt="" />
+                <span>2.38 mln</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src=" assets/alarm.png" alt="" />
+                <span>2</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="contactMadeArray"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of contactMadeArray; index as i"
+              cdkDrag
+            >
+              <app-card
+                class="w-100"
+                [deal]="item"
+                (click)="onSelect(i, contactMadeArray)"
+                [selected]="item.selected ? true : false"
+              ></app-card>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2">
+        <div class="card-container w-100">
+          <div class="header">
+            <p>Offer Sent</p>
+            <div class="d-flex">
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/tasks.png" alt="" />
+                <span>{{ offerSentArray.length }}</span>
+              </div>
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/value.png" alt="" />
+                <span>2.38 mln</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src=" assets/alarm.png" alt="" />
+                <span>2</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="offerSentArray"
+            (cdkDropListDropped)="drop($event)"
+            class="example-list"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of offerSentArray; index as i"
+              cdkDrag
+            >
+              <app-card
+                class="w-100"
+                [deal]="item"
+                (click)="onSelect(i, offerSentArray)"
+                [selected]="item.selected ? true : false"
+              ></app-card>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2">
+        <div class="card-container w-100">
+          <div class="header">
+            <p>Getting Ready</p>
+            <div class="d-flex">
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/tasks.png" alt="" />
+                <span>{{ gettingReadyArray.length }}</span>
+              </div>
+              <div class="me-3 d-flex align-items-center">
+                <img src="assets/value.png" alt="" />
+                <span>2.38 mln</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src=" assets/alarm.png" alt="" />
+                <span>2</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="gettingReadyArray"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of gettingReadyArray; index as i"
+              cdkDrag
+            >
+              <app-card
+                class="w-100"
+                [deal]="item"
+                (click)="onSelect(i, gettingReadyArray)"
+                [selected]="item.selected ? true : false"
+              ></app-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="selectedArray && selectedIndex !== -1"
+  class="delete-card text-center"
+  (click)="onDelete()"
+>
+  <p class="m-0 text-danger">Delete Card</p>
+</div>
